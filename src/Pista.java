@@ -19,7 +19,12 @@ public class Pista {
     public String getNumero(){
         return numero;
     }
-    public void setNumero(){
+    public void setNumero(String numero){
         this.numero = numero;
     }
+     @Override
+       public String toString(){
+            return "ID: " + id + "\n"
+            + "Número: " + numero + "\n";
+        }
 }

@@ -42,13 +42,110 @@ public class Aeroporto {
 
             switch (op){
                 case 1:
-                //    cadastrarAviao(scan);
+                    cadastrarAviao(scan);
                 break; 
                 case 2:
-                //    listarAviao(scan);
-                break;   
-            }
+                    listarAviao();
+                    break;  
+                case 3:
+                    removeAviao(scan);
+                    break;
+                case 4:
+                    cadastrarHelicoptero(scan);
+                    break;
+                case 5:
+                    listarHelicoptero();
+                    break;
+                case 6:
+                    removeAviao(scan);
+                    break;
+                case 7:
+                    cadastrarJato(scan);
+                    break;
+                case 8:
+                    listarJato();
+                    break;
+                case 9:
+                    removerJato(scan);
+                    break;
+                case 10: 
+                    cadastrarCompanhia(scan);
+                    break;        
+                case 11:
+                    listarCompanhia();
+                    break;
+                case 12:
+                    removeCompanhia(scan);
+                    break;
+                case 13:
+                    cadastrarVoo(scan);
+                    break;
+                case 14:
+                    listarVoo();
+                    break;
+                case 15:
+                    removeVoo(scan);
+                    break;    
+                case 16:
+                    cadastrarHangar(scan);
+                    break;
+                case 17:
+                    listarHangar();
+                    break;
+                case 18:
+                    removeHangar(scan);
+                    break;
+                case 17:
+                    cadastrarPista(scan);
+                    break;
+                case 18:
+                    listarPista();
+                    break;                
+                case 19:
+                    removePista(scan);
+                    break;
+                }       
         } while(op!=0);
         scan.close();
     }
+        public static void cadastrarAviao(Scanner scan){
+            try {
+                System.out.println("Cadastre o Avião: ");
+                System.out.println("Digite o ID do avião: ");
+                int id = scan.nextInt();
+                System.out.println("Digite seu modelo: ");
+                String modelo = scan.next();
+                System.out.println("Digite a marca: ");
+                String marca = scan.next();
+                System.out.println("Digite sua capacidade: ");
+                String capacidade = scan.next();
+                System.out.println("Digite o prefixo da aeronave: ");
+                String prefixo = scan.next();
+
+
+                new Aviao(id, modelo, marca, capacidade, prefixo, null);
+            } catch (Exception e) {
+                System.out.println("Erro, tente novamente");
+            }
+            
+            public static void listarAviao(){
+                for(Aviao aviao : Aviao.avioes){
+                    System.out.println(aviao);
+                }
+            }
+
+            public static void removeAviao(Scanner scan) {
+                System.out.println("Remover Avião");
+                System.out.println("Digite seu ID: ");
+
+                int id = scan.nextInt();
+                try {
+                    Aviao.removeAviao(id_aviao);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            
+        }
+        
 }

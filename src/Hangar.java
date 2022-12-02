@@ -26,5 +26,11 @@ public class Hangar {
     public void setLocal(String local){
         this.local = local;
     }
+    @Override
+    public String toString(){
+        return "ID: " + id + "\n"
+        + "Local: " + local + "\n"
+        + "Avião: " + this.id_aviao + "\n";
+    }
 
 }
