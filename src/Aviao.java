@@ -1,37 +1,64 @@
-public class Aviao {
+import java.util.ArrayList;
+
+public class Aviao extends Aeronave {
     
-    private String modelo;
-    private String companhia;
+    private String capacidade;
+    private String prefixo;
 
-        public Aviao(
-            String modelo,
-            String companhia
+    private int id_companhia;
+    
+    public static ArrayList<Aviao> avioes = new ArrayList<>();
+    
+    public Aviao(
+        int id,
+        String modelo,
+        String marca,
+        String capacidade,
+        String prefixo,
+        Companhia companhia
 
-        ){
-            this.modelo = modelo;
-            this.companhia = companhia;
-            
-        }
-
-        public String getModelo(){
-            return modelo;
-        }
-        public String getCompanhia(){
-            return companhia;
-        }
+    ){
+        super(id, modelo, marca);
+        this.capacidade = capacidade;
+        this.prefixo = prefixo;
+       
+      this.id_companhia = companhia.getId();
         
-        public void setModelo(String modelo) {
-            this.modelo = modelo;
-            
+        avioes.add(this);
+    }
+    public String getCapacidade(){
+        return capacidade;
+    }
+    public void setCapacidade(String capacidade){
+        this.capacidade = capacidade;
+    }
+    public String getPrefixo(){
+        return prefixo;
+    }
+    public void setPrefixo(String prefixo){
+        this.prefixo = prefixo;
+    }
+    
+    public static Aviao getAviao(int id) throws Exception{
+        for(Aviao aviao : avioes){
+            if(aviao.getId() == id){
+                return aviao;
+            }
         }
-        public void setCompanhia(String companhia) {
-            this.companhia = companhia;
-        }
-        @Override
-        public String toString(){
-            return "modelo: " + this.getModelo() + "\n"
-            + "companhia: " + this.getCompanhia() + "\n";
-        }
-
+        throw new Exception("Avião não encontrado");
+    }
+    
+    public static void removeAviao(int id) throws Exception{
+        Aviao aviao = getAviao(id);
+        avioes.remove(aviao);
+    }
+    
+   @Override 
+   public String toString(){
+       return "Modelo: " + super.getModelo() + "\n"
+               + "Marca: " + super.getmarca() + "\n"
+               + "Capacidade: " + capacidade + "\n"
+               + "Prefixo: " + prefixo + "\n"
+               + "Companhia: " + this.id_companhia + "\n";
+   }
 }
-// class aviao
