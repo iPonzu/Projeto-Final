@@ -111,6 +111,7 @@ public class Aeroporto {
         } while(op!=0);
         scan.close();
     }
+    
         public static void cadastrarAviao(Scanner scan){
             try {
                 System.out.println("Cadastre o Avião: ");
@@ -137,7 +138,7 @@ public class Aeroporto {
                 }
             }
 
-            public static void removeAviao(Scanner scan) {
+            private static void removeAviao(Scanner scan) {
                 System.out.println("Remover Avião");
                 System.out.println("Digite seu ID: ");
 
@@ -165,18 +166,18 @@ public class Aeroporto {
             String cor = scan.next();
 
 
-            new Helicoptero(id, marca, modelo, cor, id);
+            new Helicoptero(id, marca, modelo, capacidade , cor);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        public static void listarHelicoptero(){
+        private static void listarHelicoptero(){
             for(Helicoptero helicoptero : Helicoptero.helicopteros){
                 System.out.println(helicoptero);
             }
         }
         public void removeHelicoptero(Scanner scan){
-            System.out.println("Remove helicóptero");
+            System.out.println("Remover helicóptero");
             System.out.println("Digite o ID do helicóptero: ");
             int id = scan.nextInt();
             try {
@@ -206,7 +207,52 @@ public class Aeroporto {
             }
             
         }
+        private static void listarJato() {
+            for(Jato jato : Jato.jatos){
+                System.out.println(jato);
+            }
+        }
+        private static void removerJato(Scanner scan) {
+            System.out.println("Remover Jato");
+            System.out.println("Digite o ID do Jato: ");
+            int id = scan.nextInt();
+            try {
+                Jato.removeJato(id);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }  
+        }
+        public static void cadastrarCompanhia(Scanner scan) {
+            try {
+                System.out.println("Cadastre a Companhia: ");               
+                System.out.println("Digite o ID: ");
+                int id = scan.nextInt();
+                System.out.println("Digite o NOME da Companhia: ");
+                String nome = scan.next();
+                System.out.println("Digite o CNPJ da companhia: ");
+                String cnpj = scan.next();
+            } catch (Exception e) {
+                // TODO: handle exception
+                System.out.println(e.getMessage());
+            }
+            
+        }
+        private static void listarCompanhia() {
+            for(Companhia companhia : Companhia.companhias){
+                System.out.println(companhia);
+            }
+        }
+        public static void removeCompanhia(Scanner scan) {
+            System.out.println("Remover Companhia");
+            System.out.println("Digite seu ID");
 
-
-
+            int id = scan.nextInt();
+            try {
+                Companhia.removeCompanhia(id_companhia);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                // TODO: handle exception
+            }
+        }
+        
 }
