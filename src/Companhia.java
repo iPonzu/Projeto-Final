@@ -22,4 +22,20 @@ public class Companhia {
     public String getCnpj(){
         return cnpj;
     }
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setNome(String nome) {
+        this.nome = nome; 
+    }
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    @Override 
+    public String toString(){
+        return "ID: " + id + "\n"
+        + "Nome: " + nome + "\n"
+        + "CNPJ: " + cnpj + "\n";
+    }
 }

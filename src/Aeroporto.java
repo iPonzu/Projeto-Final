@@ -43,7 +43,7 @@ public class Aeroporto {
             switch (op){
                 case 1:
                     cadastrarAviao(scan);
-                break; 
+                    break; 
                 case 2:
                     listarAviao();
                     break;  
@@ -57,57 +57,61 @@ public class Aeroporto {
                     listarHelicoptero();
                     break;
                 case 6:
+                    removeHelicoptero(scan);
+                    break;    
+                case 7:
                     removeAviao(scan);
                     break;
-                case 7:
+                case 8:
                     cadastrarJato(scan);
                     break;
-                case 8:
+                case 9:
                     listarJato();
                     break;
-                case 9:
+                case 10:
                     removerJato(scan);
                     break;
-                case 10: 
+                case 11: 
                     cadastrarCompanhia(scan);
                     break;        
-                case 11:
+                case 12:
                     listarCompanhia();
                     break;
-                case 12:
+                case 13:
                     removeCompanhia(scan);
                     break;
-                case 13:
+                case 14:
                     cadastrarVoo(scan);
                     break;
-                case 14:
+                case 15:
                     listarVoo();
                     break;
-                case 15:
+                case 16:
                     removeVoo(scan);
                     break;    
-                case 16:
+                case 17:
                     cadastrarHangar(scan);
                     break;
-                case 17:
+                case 18:
                     listarHangar();
                     break;
-                case 18:
+                case 19:
                     removeHangar(scan);
                     break;
-                case 17:
+                case 20:
                     cadastrarPista(scan);
                     break;
-                case 18:
+                case 21:
                     listarPista();
                     break;                
-                case 19:
+                case 22:
                     removePista(scan);
                     break;
                 }       
         } while(op!=0);
         scan.close();
     }
+    
         public static void cadastrarAviao(Scanner scan){
             try {
                 System.out.println("Cadastre o Avião: ");
@@ -134,7 +138,7 @@ public class Aeroporto {
                 }
             }
 
-            public static void removeAviao(Scanner scan) {
+            private static void removeAviao(Scanner scan) {
                 System.out.println("Remover Avião");
                 System.out.println("Digite seu ID: ");
 
@@ -146,6 +150,109 @@ public class Aeroporto {
                 }
             }
             
+        }
+     public static void cadastrarHelicoptero(Scanner scan) {
+        try {
+            System.out.println("Cadastrar Helicóptero: ");
+            System.out.println("Digite seu ID: ");
+            int id = scan.nextInt();
+            System.out.println("Digite a marca do helicóptero: ");
+            String marca = scan.next();
+            System.out.println("Digite o modelo do helicóptero: ");
+            String modelo = scan.next();
+            System.out.println("Digite a capacidade do helicóptero: ");
+            String capacidade = scan.next();
+            System.out.println("Digite a cor do helicóptero: ");
+            String cor = scan.next();
+
+
+            new Helicoptero(id, marca, modelo, capacidade , cor);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        private static void listarHelicoptero(){
+            for(Helicoptero helicoptero : Helicoptero.helicopteros){
+                System.out.println(helicoptero);
+            }
+        }
+        public void removeHelicoptero(Scanner scan){
+            System.out.println("Remover helicóptero");
+            System.out.println("Digite o ID do helicóptero: ");
+            int id = scan.nextInt();
+            try {
+                Helicoptero.removeHelicoptero(id);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            
+        }
+        
+    }
+        public static void cadastrarJato(Scanner scan) {
+            try {
+                System.out.println("Cadastrar Jato: ");
+                System.out.println("Digite seu ID: ");
+                int id = scan.nextInt();
+                System.out.println("Digite a marca do jato: ");
+                String marca = scan.next();
+                System.out.println("Digite o modelo do jato: ");
+                String modelo = scan.next();
+                System.out.println("Digite a cor do jato: ");
+                String cor = scan.next();
+                System.out.println("Digite a velocidade: ");
+                String velocidade = scan.next();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            
+        }
+        private static void listarJato() {
+            for(Jato jato : Jato.jatos){
+                System.out.println(jato);
+            }
+        }
+        private static void removerJato(Scanner scan) {
+            System.out.println("Remover Jato");
+            System.out.println("Digite o ID do Jato: ");
+            int id = scan.nextInt();
+            try {
+                Jato.removeJato(id);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }  
+        }
+        public static void cadastrarCompanhia(Scanner scan) {
+            try {
+                System.out.println("Cadastre a Companhia: ");               
+                System.out.println("Digite o ID: ");
+                int id = scan.nextInt();
+                System.out.println("Digite o NOME da Companhia: ");
+                String nome = scan.next();
+                System.out.println("Digite o CNPJ da companhia: ");
+                String cnpj = scan.next();
+            } catch (Exception e) {
+                // TODO: handle exception
+                System.out.println(e.getMessage());
+            }
+            
+        }
+        private static void listarCompanhia() {
+            for(Companhia companhia : Companhia.companhias){
+                System.out.println(companhia);
+            }
+        }
+        public static void removeCompanhia(Scanner scan) {
+            System.out.println("Remover Companhia");
+            System.out.println("Digite seu ID");
+
+            int id = scan.nextInt();
+            try {
+                Companhia.removeCompanhia(id_companhia);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                // TODO: handle exception
+            }
         }
         
 }

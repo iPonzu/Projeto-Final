@@ -91,4 +91,20 @@ public class Voo{
     public void setObservacao(String observacao){
         this.observacao = observacao;
     }
+    
+    @Override
+    public String toString(){
+        return "Id: " + id + "\n"
+            + "Número: " + numero + "\n"
+            + "Data: " + data + "\n"
+            + "Origem: " + origem + "\n"
+            + "Destino: " + destino + "\n"
+            + "Piloto: " + piloto + "\n"
+            + "Copiloto: " + copiloto + "\n"
+            + "Observação: " + observacao + "\n"
+            + "Avião: " + this.id_aviao + "\n"
+            + "Helicoptero: " + this.id_helicoptero + "\n"
+            + "Jato: " + this.id_jato + "\n"
+            + "Pista: " + this.id_pista + "\n";
+    }
 }
