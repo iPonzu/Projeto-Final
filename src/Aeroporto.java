@@ -9,7 +9,7 @@ public class Aeroporto {
         System.out.println("Escolha uma das opções abaixo :) ");
 
         do{
-            System.out.println("==========================");
+            System.out.println("------------------------------");
             System.out.println("Escolha uma opção");
             System.out.println("1 - Cadastrar Avião: ");
             System.out.println("2 - Listar Avião: ");
@@ -32,7 +32,7 @@ public class Aeroporto {
             System.out.println("19 - Cadastrar Pista: ");
             System.out.println("20 - Listar Pista: ");
             System.out.println("21 - Remover Pista: ");
-            System.out.println("==========================");
+            System.out.println("------------------------------");
        
             try {
                 op = scan.nextInt();
@@ -353,7 +353,7 @@ public class Aeroporto {
         }
     }
 
-    public static void Pista(Scanner scanner){
+    public static void removerPista(Scanner scanner){
         try{
             System.out.println("Digite o ID da pista: ");
             int id = scanner.nextInt();
