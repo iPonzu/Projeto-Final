@@ -4,6 +4,7 @@
 -- Version: 1.0
 -- Project: Name of the project
 -- Author: joao.franco
+-- João Ignacio Castro Franco
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;

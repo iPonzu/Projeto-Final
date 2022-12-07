@@ -1,10 +1,11 @@
+package DB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class DAO {
     
-    private static Connection connection;
+    private static Connection connect;
 
     public static Connection createConnection() {
         try {

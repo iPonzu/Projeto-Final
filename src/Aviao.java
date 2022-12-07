@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Aviao extends Aeronave {
     
-    private String capacidade;
+    private int capacidade;
     private String prefixo;
 
     private int id_companhia;
@@ -13,23 +13,23 @@ public class Aviao extends Aeronave {
         int id,
         String modelo,
         String marca,
-        String capacidade,
+        int capacidade2,
         String prefixo,
         Companhia companhia
 
     ){
         super(id, modelo, marca);
-        this.capacidade = capacidade;
+        this.capacidade = capacidade2;
         this.prefixo = prefixo;
        
       this.id_companhia = companhia.getId();
         
         avioes.add(this);
     }
-    public String getCapacidade(){
+    public int getCapacidade(){
         return capacidade;
     }
-    public void setCapacidade(String capacidade){
+    public void setCapacidade(int capacidade){
         this.capacidade = capacidade;
     }
     public String getPrefixo(){
@@ -39,17 +39,17 @@ public class Aviao extends Aeronave {
         this.prefixo = prefixo;
     }
     
-    public static Aviao getAviao(int id) throws Exception{
+    public static Aviao getAviaoById(int id) throws Exception{
         for(Aviao aviao : avioes){
             if(aviao.getId() == id){
                 return aviao;
             }
         }
-        throw new Exception("Avião não encontrado");
+        throw new Exception("Avião não encontrado no sistema");
     }
     
-    public static void removeAviao(int id) throws Exception{
-        Aviao aviao = getAviao(id);
+    public static void excluir(int id) throws Exception{
+        Aviao aviao = getAviaoById(id);
         avioes.remove(aviao);
     }
     

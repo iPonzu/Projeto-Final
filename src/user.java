@@ -1,6 +1,6 @@
 import java.sql.PreparedStatement;
 
-public class User{
+public class User {
     private int id;
     private String username;
     private String name;
@@ -10,7 +10,7 @@ public class User{
     String username,
     String name,
     String password
-    )throws Exception {
+  ) throws Exception {
       
       this.username = username;
       this.name = name;
@@ -21,7 +21,7 @@ public class User{
     
       stmt.setString (1, this.getUsername());
       stmt.setString (2, this.getName());
-      stmt.setString (3, this.getPassoword()); 
+      stmt.setString (3, this.getPassword()); 
       stmt.execute();  
       DAO.closeConnection();
   }

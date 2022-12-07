@@ -1,8 +1,7 @@
 import java.util.Scanner;
-
 public class Aeroporto {
     public static void main(String[] args){
-        Scanner scan = new Scanner (System.in);
+        Scanner scan = new Scanner(System.in);
         int op = 0;
 
         System.out.println("Seja Bem vindo ao Aeroporto Jatinho Feliz");
@@ -112,23 +111,23 @@ public class Aeroporto {
         scan.close();
     }
     
-    public static void cadastrarAviao(Scanner scanner){
+    public static void cadastrarAviao(Scanner scan){
         try{
             System.out.println("Cadastro de Avião");
             System.out.println("Digite o ID do avião: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o modelo do avião: ");
-            String modelo = scanner.next();
+            String modelo = scan.next();
             System.out.println("Digite a marca do avião: ");
-            String marca = scanner.next();
+            String marca = scan.next();
             System.out.println("Digite a capacidade do avião: ");
-            String capacidade = scanner.next();
+            int capacidade = scan.nextInt();
             System.out.println("Digite o prefixo do avião: ");
-            String prefixo = scanner.next();
+            String prefixo = scan.next();
             
             new Aviao(id, modelo, marca, capacidade, prefixo, null);
         }catch(Exception e){
-            System.out.println("Erro ao cadastrar o Avião");
+            System.out.println("Erro ao cadastrar Avião");
         }
     }
     public static void listarAviao(){
@@ -138,30 +137,30 @@ public class Aeroporto {
         }
     }
 
-    public static void removerAviao(Scanner scanner){
+    public static void removerAviao(Scanner scan){
         try{
             System.out.println("Digite o ID do carro: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             Aviao.remover(id);
-            System.out.println("Avião excluído com êxito!!!");
+            System.out.println("Avião removido com sucesso");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
     }
 
-    public static void cadastrarHelicoptero(Scanner scanner){
+    public static void cadastrarHelicoptero(Scanner scan){
         try{
             System.out.println("Cadastro de Helicoptero");
             System.out.println("Digite o ID do helicoptero: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o modelo do helicoptero: ");
-            String modelo = scanner.next();
+            String modelo = scan.next();
             System.out.println("Digite a marca do helicoptero: ");
-            String marca = scanner.next();
+            String marca = scan.next();
             System.out.println("Digite a capacidade do helicoptero: ");
-            int capacidade = scanner.nextInt();
+            int capacidade = scan.nextInt();
             System.out.println("Digite a cor do helicoptero: ");
-            String cor = scanner.next();
+            String cor = scan.next();
 
             new Helicoptero(id, marca, modelo, capacidade, cor);
         }catch(Exception e){
@@ -174,29 +173,29 @@ public class Aeroporto {
             System.out.println(helicoptero);
         }
     }       
-    public static void removerHelicoptero(Scanner scanner){
+    public static void removerHelicoptero(Scanner scan){
         try{
             System.out.println("Digite o ID do Helicoptero: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             Helicoptero.remover(id);
-            System.out.println("Helicoptero excluído com êxito!!!");
+            System.out.println("Helicoptero removido com sucesso");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }    
     }
-    public static void cadastrarJato(Scanner scanner) {
+    public static void cadastrarJato(Scanner scan) {
         try{
             System.out.println("Cadastro de Jato");
             System.out.println("Digite o ID do jato: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o modelo do jato: ");
-            String modelo = scanner.next();
+            String modelo = scan.next();
             System.out.println("Digite a marca do jato: ");
-            String marca = scanner.next();
+            String marca = scan.next();
             System.out.println("Digite a velocidade do jato: ");
-            int velocidade = scanner.nextInt();
+            int velocidade = scan.nextInt();
             System.out.println("Digite a cor do jato: ");
-            String cor = scanner.next();
+            String cor = scan.next();
             
             new Jato(id, modelo, marca, velocidade, cor);
         }catch(Exception e) {
@@ -211,10 +210,10 @@ public class Aeroporto {
         }
     }
 
-    public static void removerJato(Scanner scanner){
+    public static void removerJato(Scanner scan){
         try{
             System.out.println("Digite o ID do jato: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             Jato.remover(id);
             System.out.println("Jato excluído com êxito!!");
         }catch (Exception e){
@@ -222,15 +221,15 @@ public class Aeroporto {
         }
     }
 
-    public static void cadastrarCompanhia(Scanner scanner){
+    public static void cadastrarCompanhia(Scanner scan){
         try{
             System.out.println("Cadastro de Companhia");
             System.out.println("Digite o ID do companhia: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o nome da companhia: ");
-            String nome = scanner.next();
+            String nome = scan.next();
             System.out.println("Digite o CNPJ da companhia: ");
-            String cnpj = scanner.next();
+            String cnpj = scan.next();
 
             new Companhia(id, nome, cnpj);
     }catch (Exception e){
@@ -245,10 +244,10 @@ public class Aeroporto {
         }
     }
 
-    public static void removerCompanhia(Scanner scanner){
+    public static void removerCompanhia(Scanner scan){
          try{
              System.out.println("Digite o ID da companhia: ");
-             int id = scanner.nextInt();
+             int id = scan.nextInt();
              Companhia.remover(id);
              System.out.println("Companhia excluída com êxito!!");
          }catch (Exception e){
@@ -256,25 +255,25 @@ public class Aeroporto {
          }
      }
 
-    public static void cadastrarVoo(Scanner scanner){
+    public static void cadastrarVoo(Scanner scan){
         try{
             System.out.println("Cadastro de Voo");
             System.out.println("Digite o ID do voo: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o número do voo: ");
-            String numero = scanner.next();
+            String numero = scan.next();
             System.out.println("Digite a data do voo: ");
-            String data = scanner.next();
+            String data = scan.next();
             System.out.println("Digite a origem do voo: ");
-            String origem = scanner.next();
+            String origem = scan.next();
             System.out.println("Digite o destino do voo: ");
-            String destino = scanner.next();
+            String destino = scan.next();
             System.out.println("Digite qual o piloto do voo: ");
-            String piloto = scanner.next();
+            String piloto = scan.next();
             System.out.println("Digite qual o copiloto do voo: ");
-            String copiloto = scanner.next();
+            String copiloto = scan.next();
             System.out.println("Digite a observação do voo: ");
-            String obsevacao = scanner.next();
+            String obsevacao = scan.next();
             
            new Voo(id, numero, data, origem, destino, piloto, copiloto, obsevacao, null, null, null, null);
         }catch(Exception e){
@@ -289,10 +288,10 @@ public class Aeroporto {
         }
     }
     
-    public static void removerVoo(Scanner scanner){
+    public static void removerVoo(Scanner scan){
         try{
             System.out.println("Digite o ID do voo: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             Voo.remover(id);
             System.out.println("Voo excluído com êxito!!");
         }catch(Exception e){
@@ -300,13 +299,13 @@ public class Aeroporto {
         }
     }
 
-    public static void cadastrarHangar(Scanner scanner){
+    public static void cadastrarHangar(Scanner scan){
         try{
             System.out.println("Cadastro de Hangar");
             System.out.println("Digite o ID do hangar: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o local do hangar: ");
-            String local = scanner.next();
+            String local = scan.next();
             
             new Hangar(id, local, null);
         }catch(Exception e){
@@ -321,10 +320,10 @@ public class Aeroporto {
         }
     }
 
-    public static void removerHangar(Scanner scanner){
+    public static void removerHangar(Scanner scan){
         try{
             System.out.println("Digite o ID do hangar");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             Hangar.remover(id);
             System.out.println("Avião excluído com êxito!!");
         }catch(Exception e) {
@@ -332,13 +331,13 @@ public class Aeroporto {
         }
     }
 
-    public static void cadastrarPista(Scanner scanner){
+    public static void cadastrarPista(Scanner scan){
         try{
             System.out.println("Cadastro de Pista");
             System.out.println("Digite o ID da pista: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             System.out.println("Digite o numero da pista: ");
-            String numero = scanner.next();
+            String numero = scan.next();
             
              new Pista(id, numero);
         }catch(Exception e){
@@ -353,12 +352,12 @@ public class Aeroporto {
         }
     }
 
-    public static void removerPista(Scanner scanner){
+    public static void removerPista(Scanner scan){
         try{
             System.out.println("Digite o ID da pista: ");
-            int id = scanner.nextInt();
+            int id = scan.nextInt();
             Pista.remover(id);
-            System.out.println("Pista excluída com êxito!!");
+            System.out.println("Pista removida com sucesso");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
