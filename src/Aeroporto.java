@@ -4,7 +4,7 @@ public class Aeroporto {
         Scanner scan = new Scanner(System.in);
         int op = 0;
 
-        System.out.println("Seja Bem vindo ao Aeroporto Jatinho Feliz");
+        System.out.println("Seja Bem vindo ao Aeroporto Internacional de Guarulhos - GRU");
         System.out.println("Escolha uma das opções abaixo :) ");
 
         do{

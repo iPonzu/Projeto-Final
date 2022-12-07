@@ -1,4 +1,2 @@
-## Aeroporto Jatinho feliz
-projeto final da disciplina de programação orientada a objetos
-## Considerações finais:
-voa passarinho
+# Projeto final da disciplina de POO, desenvolvido em Java e SQL. 
+# Modelo de um aeroporto
