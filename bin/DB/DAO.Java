@@ -1,15 +1,14 @@
-package DB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class DAO {
     
-    private static Connection connect;
+    private static Connection connection;
 
     public static Connection createConnection() {
         try {
-            final String URL = "";
+            final String URL = "jdbc:mysql://localhost:3306/mydb?Timezone=true&serverTimezone=UTC";
             final String USER = "root";
             final String PASSWORD = "";
 
