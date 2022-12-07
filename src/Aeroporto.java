@@ -1,8 +1,5 @@
 import java.util.Scanner;
-
 public class Aeroporto {
- 
-    
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int opcao = 0;
